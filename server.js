@@ -16,8 +16,8 @@ require('./config/routes.js')(app);
 
 
 	
-app.listen(8000, function(){
-	console.log("server running on port 8000");
+app.listen(9002, function(){
+	console.log("server running on port 9002");
 });
 
 
