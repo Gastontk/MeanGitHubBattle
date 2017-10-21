@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { GithubService } from '../github.service';
 import {Player} from '../player';
-import { SortPipe } from '../sort.pipe';
+import { OrderByPipe } from '../sort.pipe';
 @Component({
   selector: 'app-ranking',
   templateUrl: './ranking.component.html',
