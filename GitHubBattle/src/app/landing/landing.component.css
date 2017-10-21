@@ -1,0 +1,72 @@
+.landingContainer{
+	display: inline-block;
+	width: 100%;
+	height: 150px;
+	margin-top: 10px;
+}
+
+
+.leftContestant{
+	border:solid black 1px;
+	background-color: linen;
+	display:inline-block;
+	width: 30%;
+	height: 100%;
+	margin-left: 10%;
+	/*margin-right: 10%;*/
+	padding: 5px;
+	text-align: center;
+}
+.rightContestant{
+	border:solid black 1px;
+	background-color: linen;
+	display:inline-block;
+	margin-left: 10%;
+
+	width: 30%;
+	height: 100%;
+	padding: 5px;
+	text-align: center;
+
+
+
+}
+.longButton{
+	margin-top: 10px;
+	width: 80%;
+	background-color: #519fff;
+	color: white;
+
+}
+.extraLongButton{
+	/*margin-left: 9%;*/
+	margin-top: 10px;
+	width: 90%;
+	/*background-color: #519fff;*/
+	color: white;
+	
+}
+.resetButton{
+	margin-top: 20px;
+	background-color: black;
+	color: white;
+	width: 100%;
+}
+
+.playerFound{
+	border:solid black 1px;
+	background-color: linen;
+	display:inline-block;
+	width: 30%;
+	height: 100%;
+	padding: 5px;
+	text-align: center;
+	margin-left: 10%;
+
+
+}
+.centerMe{
+	text-align: center;
+}
+
+

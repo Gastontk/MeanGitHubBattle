@@ -1,0 +1,16 @@
+.container{
+	display: inline-block;
+}
+
+.image{
+	/*display:inline-block;*/
+}
+
+.score{
+	/*display:inline-block;*/
+}
+
+.gitmonautHolder{
+	max-width: 200px;
+	display:inline-block;
+}

@@ -1,0 +1,24 @@
+<ul>
+	<li *ngFor = "let player of players | orderby ">
+		{{player.name}} scores {{player.score }}
+
+	</li>
+</ul>
+<div class='container'*ngFor="let player of players " >
+	<div class='gitmonautHolder'>
+
+		<div class = 'image'>
+			<img width = '100' src="{{player.image}}" alt=""><br>
+			{{player.name}}
+
+		</div>
+		<div class = 'score'>
+			<h4>Score: {{player.score}}</h4>
+		</div>
+	</div>
+
+	
+
+
+
+</div>
