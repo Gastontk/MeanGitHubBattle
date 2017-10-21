@@ -8,7 +8,61 @@ import { Player } from './player'
 })
 
 export class OrderByPipe implements PipeTransform{
-	player:Player;
+
+     // transform(value: Array<any>, args: string): object{
+     //    if(args ==='ascending'){
+     //        return value.score.sort()
+     //    }else if(args === 'descending'){
+     //      return value.sort().reverse
+
+     //    }
+
+
+     //  }
+
+
+
+
+
+
+
+
+transform(array: Array<Player>): Array<Player> {
+  console.log('Pipe starting')
+    array.sort((a: Player, b: Player) => {
+     console.log('sorting', a.score,' vs ', b.score);
+      if (Number(a.score) < Number(b.score)) {
+       console.log('a less than b')
+        return 1;
+      } else if (Number(a.score) > Number(b.score)) {
+       console.log('b less than a');
+        return -1;
+      } else {
+       console.log('b equals a');
+        return 0;
+      }
+      // return ' working'
+    });
+    console.log(array);
+    return array;
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	// player:Player;
 //testing where pipe is failing:
 	// transform(value:any){
 	// 	console.log(value);
@@ -20,23 +74,23 @@ export class OrderByPipe implements PipeTransform{
 //end testing
 
 
-	transform(xx: any): any {
-		console.log('in transform, array is', xx)
-        if (xx !== undefined) {
-            xx.sort((a: any, b: any) => {
-              console.log(a,' a - b ', b)
-                if ( a.score < b.score ){
-                    return -1;
-                } else if ( a.score > b.score ) {
-                    return 1;
-                } else {
-                    return 0;   
-                }
-            });
-        }
-        console.log(xx);
-        return xx;
-      }
+	// transform(xx: any): any {
+	// 	console.log('in transform, array is', xx)
+ //        if (xx !== undefined) {
+ //            xx.sort((a: any, b: any) => {
+ //              console.log(a,' a - b ', b)
+ //                if ( a.score < b.score ){
+ //                    return -1;
+ //                } else if ( a.score > b.score ) {
+ //                    return 1;
+ //                } else {
+ //                    return 0;   
+ //                }
+ //            });
+ //        }
+ //        console.log(xx);
+ //        return xx;
+ //      }
 
 
 
@@ -49,19 +103,6 @@ export class OrderByPipe implements PipeTransform{
 
 	// transform(array: any){
 
-
-  // transform(input: any, args?: any): any {
-  //   input.sort((a: any, b: any) => {
-  //     if (a < b) {
-  //       return -1;
-  //     } else if (a > b) {
-  //       return 1;
-  //     } else {
-  //       return 0;
-  //     }
-  //   });
-  //   return input;
-  // }
 
 
 

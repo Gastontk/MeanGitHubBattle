@@ -155,10 +155,10 @@ var AppModule = (function () {
 AppModule = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_core__["b" /* NgModule */])({
         declarations: [
+            __WEBPACK_IMPORTED_MODULE_9__sort_pipe__["a" /* OrderByPipe */],
             __WEBPACK_IMPORTED_MODULE_3__app_component__["a" /* AppComponent */],
             __WEBPACK_IMPORTED_MODULE_4__landing_landing_component__["a" /* LandingComponent */],
             __WEBPACK_IMPORTED_MODULE_8__ranking_ranking_component__["a" /* RankingComponent */],
-            __WEBPACK_IMPORTED_MODULE_9__sort_pipe__["a" /* OrderByPipe */],
         ],
         imports: [
             __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
@@ -442,7 +442,7 @@ module.exports = module.exports.toString();
 /***/ "./src/app/ranking/ranking.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<ul>\n\t<li *ngFor = \"let player of players | orderby \">\n\t\t{{player.name}} scores {{player.score }}\n\n\t</li>\n</ul>\n<div class='container'*ngFor=\"let player of players \" >\n\t<div class='gitmonautHolder'>\n\n\t\t<div class = 'image'>\n\t\t\t<img width = '100' src=\"{{player.image}}\" alt=\"\"><br>\n\t\t\t{{player.name}}\n\n\t\t</div>\n\t\t<div class = 'score'>\n\t\t\t<h4>Score: {{player.score}}</h4>\n\t\t</div>\n\t</div>\n\n\t\n\n\n\n</div>"
+module.exports = "<ul>\n\t<li *ngFor = \"let player of players | orderby: 'ascending' \">\n\t\t{{player.name}} scores {{player.score }}\n\n\t</li>\n</ul>\n<div class='container'*ngFor=\"let player of players \" >\n\t<div class='gitmonautHolder'>\n\n\t\t<div class = 'image'>\n\t\t\t<img width = '100' src=\"{{player.image}}\" alt=\"\"><br>\n\t\t\t{{player.name}}\n\n\t\t</div>\n\t\t<div class = 'score'>\n\t\t\t<h4>Score: {{player.score}}</h4>\n\t\t</div>\n\t</div>\n\n\t\n\n\n\n</div>"
 
 /***/ }),
 
@@ -523,33 +523,33 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var OrderByPipe = (function () {
     function OrderByPipe() {
     }
-    //testing where pipe is failing:
-    // transform(value:any){
-    // 	console.log(value);
-    // 	// value[score] = 77
-    // 	// var addMe = 999999
-    // 	// value.score +=addMe;
-    // 	return value+88;
-    // }
-    //end testing
-    OrderByPipe.prototype.transform = function (xx) {
-        console.log('in transform, array is', xx);
-        if (xx !== undefined) {
-            xx.sort(function (a, b) {
-                console.log(a, ' a - b ', b);
-                if (a.score < b.score) {
-                    return -1;
-                }
-                else if (a.score > b.score) {
-                    return 1;
-                }
-                else {
-                    return 0;
-                }
-            });
-        }
-        console.log(xx);
-        return xx;
+    // transform(value: Array<any>, args: string): object{
+    //    if(args ==='ascending'){
+    //        return value.score.sort()
+    //    }else if(args === 'descending'){
+    //      return value.sort().reverse
+    //    }
+    //  }
+    OrderByPipe.prototype.transform = function (array) {
+        console.log('Pipe starting');
+        array.sort(function (a, b) {
+            console.log('sorting', a.score, ' vs ', b.score);
+            if (Number(a.score) < Number(b.score)) {
+                console.log('a less than b');
+                return 1;
+            }
+            else if (Number(a.score) > Number(b.score)) {
+                console.log('b less than a');
+                return -1;
+            }
+            else {
+                console.log('b equals a');
+                return 0;
+            }
+            // return ' working'
+        });
+        console.log(array);
+        return array;
     };
     return OrderByPipe;
 }());

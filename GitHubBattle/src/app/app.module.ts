@@ -14,10 +14,11 @@ import { OrderByPipe } from './sort.pipe';
 
 @NgModule({
   declarations: [
+    OrderByPipe,
     AppComponent,
     LandingComponent,
     RankingComponent,
-    OrderByPipe,
+
   ],
   imports: [
     BrowserModule,

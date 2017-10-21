@@ -1,5 +1,5 @@
 <ul>
-	<li *ngFor = "let player of players | orderby ">
+	<li *ngFor = "let player of players | orderby: 'ascending' ">
 		{{player.name}} scores {{player.score }}
 
 	</li>
