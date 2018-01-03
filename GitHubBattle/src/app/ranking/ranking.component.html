@@ -1,24 +1,34 @@
-<ul>
-	<li *ngFor = "let player of players | orderby: 'ascending' ">
+<p class = 'Jumbotron'> Rankings:</p>
+<ol>
+	<li *ngFor = "let player of players | orderby ">
 		{{player.name}} scores {{player.score }}
+		<div class = 'image'>
+			<img width = '100' src="{{player.image}}" alt=""><br>
+<!-- 			{{player.name}}
+ -->
+		</div>
+		<br><br>
 
 	</li>
-</ul>
-<div class='container'*ngFor="let player of players " >
-	<div class='gitmonautHolder'>
-
+	<hr>
+</ol>
+<!-- <div class='container'*ngFor="let player of players " >
+	<div class='gitmonautHolder row'>
+	 <div class = 'col-lg-4 col-md-6 col-sm-6 col-xs-12'>
 		<div class = 'image'>
 			<img width = '100' src="{{player.image}}" alt=""><br>
 			{{player.name}}
 
 		</div>
+   	 </div>
 		<div class = 'score'>
 			<h4>Score: {{player.score}}</h4>
 		</div>
 	</div>
+</div> -->
 
 	
 
 
 
-</div>
+<!-- </div> -->

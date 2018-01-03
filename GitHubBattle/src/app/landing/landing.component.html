@@ -1,28 +1,36 @@
 
 
-<div class = 'landingContainer'>
-  <div *ngIf='!battleTime'>
-	<div *ngIf = '!player1.score' class = 'leftContestant'>
-		<p>Player 1</p>
-		<form name = 'leftForm'  #leftForm = 'ngForm' (submit) = 'submitLeftForm($event)'>
-			Gitgub Username: <input type="text" name= 'name' #name = 'ngModel' [(ngModel)] = 'player1.name' required>
-			<input [disabled]='!player1.name' class='longButton' type="submit">
-
-		</form>
+<div class = 'landingContainer container'>
+ <div class ="row">
+  <div *ngIf='!battleTime' >
+<!--   	<div class = 'col-lg-4 col-md-0 col-sm-12 col-xs-6'></div>
+ --> <div class = 'col-lg-5 col-md-4 col-sm-6 col-xs-12'>
+		<div *ngIf = '!player1.score' class = 'leftContestant '>
+			<p>Player 1</p>
+			<form name = 'leftForm'  #leftForm = 'ngForm' (submit) = 'submitLeftForm($event)'>
+				Github Username: <input class = 'textInput' type="text" name= 'name' #name = 'ngModel' [(ngModel)] = 'player1.name' required>
+				<input [disabled]='!player1.name' class='longButton' type="submit">
+			</form>		
+		</div>
 	
-		
+		<div class = 'playerFound' *ngIf = 'player1.score'>		<h3>{{player1.name}}</h3>  
+			<img width ='75'src="{{player1.image}}" alt="">
+		</div>
 	</div>
-	<div class = 'playerFound' *ngIf = 'player1.score'>		<h3>{{player1.name}}</h3>  
-		<img width ='75'src="{{player1.image}}" alt=""></div>
-	<div *ngIf = '!player2.score' class = 'rightContestant'>
-		<p>Player 2</p>
-		<form name='rightForm' #rightForm = 'ngForm'(submit) = 'submitRightForm($event)'>
-			Gitgub Username: <input name='name' #name = 'ngModel' [(ngModel)]= 'player2.name' type="text">
-			<input [disabled]='!player2.name' class = 'longButton'type="submit">
 
-		</form>
+	<div class='col-lg-5 col-md-4 col-sm-6 col-xs-12'>
+		<div *ngIf = '!player2.score' class = 'rightContestant ' >
+			<p>Player 2</p>
+			<form name='rightForm' #rightForm = 'ngForm'(submit) = 'submitRightForm($event)'>
+				Github Username: <input class = 'textInput' name='name' #name = 'ngModel' [(ngModel)]= 'player2.name' type="text">
+				<input [disabled]='!player2.name' class = 'longButton'type="submit">
 
-	</div>
+			</form>
+
+		</div>
+
+
+
 	<div class = 'playerFound' *ngIf = 'player2.score'>
 		<h3>{{player2.name}}</h3>  
 		<img width ='75' src="{{player2.image}}" alt="">
@@ -34,6 +42,8 @@
 <!-- section for deciding which winning message to show -->
 
   </div>
+  	</div> 
+</div>
 
 	<div *ngIf = 'battleTime'>
 

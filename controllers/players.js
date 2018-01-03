@@ -19,7 +19,7 @@ module.exports = {
 		//   }
 		// });
 
-
+		console.log('in Index')
 		Player.find({}, null, {sort:{score:'descending'}},function (err, players){
 			if(err){
 				console.log('Error getting players', err)
@@ -41,7 +41,7 @@ module.exports = {
 
 
 
-		// console.log('In create()',req.body);
+		console.log('In create()',req.body);
 		var player = new Player({id: req.body.id, name: req.body.name, score: req.body.score, image:req.body.image});
 		this.player = player;
 		console.log('create()', player, req.body.id);
